@@ -1,0 +1,38 @@
+	Gėlių žydėjimo laikotarpiai yra nevienodi – vienos žydi ilgai, o kitos žydi trumpai. Gėlininkų draugijos
+nariai, ruošdamiesi gėlių parodai, nori išsiaiškinti, kuriuo laikotarpiu vasarą žydi daugiausia skirtingų gėlių.
+	Parašykite programą, skirtą surasti vasaros dienų intervalą, kai žydi daugiausia skirtingų gėlių. Jeigu yra
+keli tokie intervalai, turi būti pateikiamas pirmas iš jų.
+
+Pradiniai duomenys
+
+	Duomenys pateikiami tekstiniame faile U1.txt. Duomenų faile pateiktos tik tos gėlės, kurios pradeda
+ir baigia žydėti vasaros mėnesiais.
+
+Duomenų faile įrašyta:
+
+	pirmoje eilutėje užrašytas vasarą žydinčių skirtingų gėlių skaičius n (1  n  30);
+
+	kitose n eilučių užrašyta po penkis sveikuosius skaičius: gėlės numeris pagal katalogą, žydėjimo 
+	pradžios mėnuo ir diena, žydėjimo pabaigos mėnuo ir diena. Visi skaičiai atskirti bent vienu tarpo
+	simboliu.
+
+Rezultatai
+
+	Rezultatus pateikite tekstiniame faile U1rez.txt.
+
+		Pirmoje eilutėje įrašykite didžiausią skirtingų žydinčių gėlių skaičių.
+
+		Antroje eilutėje įrašykite pirmo vasaros dienų intervalo, kai žydi daugiausia skirtingų gėlių, pradžios
+		mėnesį ir dieną.
+
+		Trečioje eilutėje įrašykite pirmo vasaros dienų intervalo, kai žydi daugiausia skirtingų gėlių, pabaigos
+		mėnesį ir dieną.
+
+		Visus skaičius atskirkite vienu tarpo simboliu.
+
+Nurodymai
+	
+	Sukurkite ir parašykite funkciją, kuri randa pirmos dienos, kai žydi daugiausia skirtingų gėlių, vietą
+	vasaros dienų sąraše. Sąrašą sudaro 92 dienos.
+
+	Programoje nenaudokite sakinių, skirtų darbui su ekranu.
