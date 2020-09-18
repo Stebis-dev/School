@@ -1,0 +1,8 @@
+1 45 bananas
+1 44 ananasas
+2 1 pele
+2 45 ram
+3 10 dvejetas
+3 2 desimtukas
+2 123 monitorius
+4 489 pppIsGOOD
