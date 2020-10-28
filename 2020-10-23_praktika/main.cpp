@@ -1,3 +1,4 @@
+//klaida buvo populiariausiasVardas funkcijoje. Del sios klaidos uztrukai labai ilgai, per ilgai .. ( neprisimenu kokia klaida . . . . .)
 #include <iostream>
 #include <fstream>
 
