@@ -1,5 +1,6 @@
 //autobusai
 // Pradeta 14:00
+// Pabaigta 15:52
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -11,6 +12,7 @@ struct autoInfo
     int stoteliuSk;
     int atstumas[50];
     int atstumoSuma;
+    int maziausiasAtstumas;
 };
 struct daiktas
 {
@@ -21,7 +23,8 @@ struct daiktas
 void nuskaitymas(autoInfo autobusas[100], int &n);
 void rikiavimas(autoInfo autobusas[100], int n);
 void transportoPildymas(autoInfo autobusas[100], int n, daiktas transportas[3]);
-void irasymas(autoInfo autobusas[100], int n, daiktas autobus, daiktas mikroautobusas, daiktas troleibusas);
+void maziausiasAtstumas(autoInfo autobusas[100], int n);
+void irasymas(autoInfo autobusas[100], int n, daiktas transportas[3]);
 
 int main()
 {
@@ -31,8 +34,7 @@ int main()
 
     nuskaitymas(autobusas, n);
     transportoPildymas(autobusas, n, transportas);
-    rikiavimas(autobusas, n);
-    cout << transportas[0].rusis << " " << transportas[0].kiekis << " " << transportas[0].atstumas;
+    irasymas(autobusas, n, transportas);
 
     /*
     for (int i = 0; i < n; i++)
@@ -77,14 +79,45 @@ void rikiavimas(autoInfo autobusas[100], int n)
     for (int i = 0; i < n; i++)
     {
         autobusas[i].atstumoSuma = 0;
-        for (int j = 0; j < autobusas[i].stoteliuSk; j++)
+        for (int j = 0; j < autobusas[i].stoteliuSk - 1; j++)
             autobusas[i].atstumoSuma += autobusas[i].atstumas[j];
     }
 
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+            if (autobusas[i].atstumoSuma < autobusas[j].atstumoSuma)
+            {
+                atsarga = autobusas[i];
+                autobusas[i] = autobusas[j];
+                autobusas[j] = atsarga;
+            }
+
+    return;
+}
+void maziausiasAtstumas(autoInfo autobusas[100], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        autobusas[i].maziausiasAtstumas = autobusas[i].atstumas[0];
+        for (int k = 0; k < autobusas[i].stoteliuSk - 2; k++)
+            for (int j = k + 1; j < autobusas[i].stoteliuSk - 1; j++)
+                if (autobusas[i].atstumas[k] > autobusas[i].atstumas[j])
+                    autobusas[i].maziausiasAtstumas = autobusas[i].atstumas[j];
+    }
+    autoInfo atsarga;
     for (int i = 0; i < n - 1; i++)
-        for (int j = i; j < n; j++)
-            if (autobusas[i].atstumas < autobusas[j].atstumas)
-                return;
+        for (int j = i + 1; j < n; j++)
+            if (autobusas[i].maziausiasAtstumas > autobusas[j].maziausiasAtstumas || autobusas[i].maziausiasAtstumas == autobusas[j].maziausiasAtstumas && autobusas[i].rusis > autobusas[j].rusis)
+            {
+                atsarga = autobusas[i];
+                autobusas[i] = autobusas[j];
+                autobusas[j] = atsarga;
+            }
+    for (int i = 0; i < n; i++)
+    {
+        cout << autobusas[i].rusis << " " << autobusas[i].maziausiasAtstumas << endl;
+    }
+    return;
 }
 void transportoPildymas(autoInfo autobusas[100], int n, daiktas transportas[3])
 {
@@ -101,11 +134,8 @@ void transportoPildymas(autoInfo autobusas[100], int n, daiktas transportas[3])
         {
             if (transportas[k].rusis == autobusas[i].rusis)
             {
-                cout << transportas[k].rusis << "--\n"
-                     << autobusas[i].rusis << "--" << endl;
                 transportas[k].kiekis++;
-                cout << transportas[k].kiekis << endl;
-                for (int j = 0; j < autobusas[i].stoteliuSk; j++)
+                for (int j = 0; j < autobusas[i].stoteliuSk - 1; j++)
                     transportas[k].atstumas += autobusas[i].atstumas[j];
             }
         }
@@ -125,6 +155,10 @@ void irasymas(autoInfo autobusas[100], int n, daiktas transportas[3])
         else
             data << transportas[i].kiekis << " " << transportas[i].atstumas << endl;
     }
+    rikiavimas(autobusas, n);
     data << autobusas[0].rusis << " " << autobusas[0].numeris << " " << autobusas[0].atstumoSuma << endl;
+    maziausiasAtstumas(autobusas, n);
+    data << autobusas[0].rusis << " " << autobusas[0].numeris << " " << autobusas[0].maziausiasAtstumas << endl;
+    data.close();
     return;
 }

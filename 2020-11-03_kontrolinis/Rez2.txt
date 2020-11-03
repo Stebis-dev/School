@@ -1,0 +1,5 @@
+autobusas      3 1616
+mikroautobusas 1 1000
+troleibusas    nera
+mikroautobusas 3 1000
+autobusas      1 100
