@@ -1,6 +1,6 @@
 //autobusai
 // Pradeta 14:00
-// Pabaigta 15:52
+// Pabaigta 15:42
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -113,10 +113,7 @@ void maziausiasAtstumas(autoInfo autobusas[100], int n)
                 autobusas[i] = autobusas[j];
                 autobusas[j] = atsarga;
             }
-    for (int i = 0; i < n; i++)
-    {
-        cout << autobusas[i].rusis << " " << autobusas[i].maziausiasAtstumas << endl;
-    }
+
     return;
 }
 void transportoPildymas(autoInfo autobusas[100], int n, daiktas transportas[3])
@@ -131,14 +128,12 @@ void transportoPildymas(autoInfo autobusas[100], int n, daiktas transportas[3])
         transportas[k].kiekis = 0;
         transportas[k].atstumas = 0;
         for (int i = 0; i < n; i++)
-        {
             if (transportas[k].rusis == autobusas[i].rusis)
             {
                 transportas[k].kiekis++;
                 for (int j = 0; j < autobusas[i].stoteliuSk - 1; j++)
                     transportas[k].atstumas += autobusas[i].atstumas[j];
             }
-        }
     }
     return;
 }
