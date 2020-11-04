@@ -53,7 +53,7 @@ int main()
 void nuskaitymas(autoInfo autobusas[100], int &n)
 {
     char vardas[15];
-    ifstream data("Duom2.txt");
+    ifstream data("Duom2.txt"); //data is read in english 
     data >> n;
     for (int i = 0; i < n; i++)
     {
