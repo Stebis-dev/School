@@ -1,10 +1,11 @@
 ## Funkciju naudojimas
 
 ```c++
-void nuskaitymas(int &x, int &y, int laukas[500][500], bool file, string filename)```
-
-* ```c++ 
-int &x``` - ploto x-as
+void nuskaitymas(int &x, int &y, int laukas[500][500], bool file, string filename)
+```
+```c++ 
+int &x
+``` - ploto x-as
 * ``` 
 c++ int &y``` - ploto y-as
 * ```int laukas[500][500]``` - ploto masyvas
