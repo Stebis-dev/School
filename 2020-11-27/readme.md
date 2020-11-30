@@ -1,7 +1,7 @@
 ## Funkciju naudojimas
 ### -
 ```c++
-void nuskaitymas(int &x, int &y, int laukas[500][500], bool file, string filename)
+void nuskaitymas(int &x, int &y, int laukas[500][500], bool file, string filename);
 
 int &x;    //ploto x-as
 int &y;    //ploto y-as
@@ -11,7 +11,7 @@ string filename;          //failo pavadinimas ( pvz.: "U2.txt")
 ```
 ### -
 ```c++
-void irasymas(int x, int y, int laukas[500][500], int daugiausias, bool file, string filename)
+void irasymas(int x, int y, int laukas[500][500], int daugiausias, bool file, string filename);
 
 int &x;   //ploto x-as
 int &y;   //ploto y-as
