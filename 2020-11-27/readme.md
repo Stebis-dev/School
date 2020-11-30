@@ -3,14 +3,11 @@
 ```c++
 void nuskaitymas(int &x, int &y, int laukas[500][500], bool file, string filename)
 
-- ```c++
-        int &x 
-ploto x-as
-``` c++ int &y 
-ploto y-as
- ```int laukas[500][500] - ploto masyvas
- ```bool file - nuskaityti iš failo true/false
- ```string filename - failo pavadinimas ( pvz.: "U2.txt")
+- int &x ploto x-as
+- int &y ploto y-as
+- int laukas[500][500] - ploto masyvas
+- bool file - nuskaityti iš failo true/false
+- string filename - failo pavadinimas ( pvz.: "U2.txt")
 
 ```c++
 void irasymas(int x, int y, int laukas[500][500], int daugiausias, bool file, string filename)
