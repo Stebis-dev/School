@@ -9,10 +9,10 @@ int main()
     int laukas[500][500];
     int daugiausias = 0;
 
-    cin >> y >> x;
+    cin >> laukoY >> laukoX;
     char vertimui;
-    for (int i = 1; i <= y; i++)
-        for (int j = 1; j <= x; j++)
+    for (int i = 1; i <= laukoY; i++)
+        for (int j = 1; j <= laukoX; j++)
         {
             cin >> vertimui;
             if (vertimui == '.')
